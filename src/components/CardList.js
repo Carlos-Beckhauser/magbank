@@ -21,3 +21,5 @@ const CardList = ({ posts }) => (
     </Row>
   </Container>
 );
+
+export default CardList;

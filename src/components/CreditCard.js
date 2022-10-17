@@ -73,3 +73,5 @@ const CreditCard = () => (
     </Row>
   </Container>
 );
+
+export default CreditCard;
