@@ -10,9 +10,9 @@ const CardList = ({ posts }) => (
           <Card className="mx-auto my-3">
             <Card.Img variant="top" src={image} />
             <Card.Body>
-              <Card.title>{title}</Card.title>
-              <Card.text>{excerpt}</Card.text>
-              <Button variant="primary">{action}</Button>
+              <Card.Title>{title}</Card.Title>
+              <Card.Text>{excerpt}</Card.Text>
+              <Button variant="danger">{action}</Button>
             </Card.Body>
           </Card>
         </Col>

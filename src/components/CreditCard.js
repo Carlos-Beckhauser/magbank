@@ -68,8 +68,9 @@ const CreditCard = () => (
           </Col>
         </Row>
       </Col>
-      <Col xs={12} lg={7}></Col>
-      <Image src={creditCard} alt="Magbank Credit Card Example" fluid />
+      <Col xs={12} lg={5}>
+        <Image src={creditCard} alt="Magbank Credit Card Example" fluid />
+      </Col>
     </Row>
   </Container>
 );
