@@ -12,16 +12,12 @@ const App = () => {
   return (
     <Router>
       <Navbar handleCreateAcc={() => setShowModal(true)} />
-
       <Routes>
-        <Route path="/">
-          <Home handleClick={() => setShowModal(true)} />
-        </Route>
-        <Route path="/login">
-          <h2>Hello React Router !!!</h2>
-        </Route>
+        <Route
+          path="/"
+          element={<Home handleClick={() => setShowModal(true)} />}
+        />
       </Routes>
-
       <Footer />
       <AccountModal show={showModal} handleClose={() => setShowModal(false)} />
     </Router>
