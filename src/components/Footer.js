@@ -16,17 +16,17 @@ const Footer = () => (
   <footer className="footer">
     <Container>
       <Row className="text-center py-5">
-        <Col xs={12} lg={6} className="text-lg-left">
+        <Col xs={12} lg={6} className="text-lg-left mb-4">
           <Image src={logo} />
         </Col>
-        <Col xs={12} lg={4} className="xs-my-5">
-          <Image src={applestore} />
-          <Image src={googleplay} className="ml-2" />
+        <Col xs={12} lg={4} className="xs-my-5 mb-4">
+          <Image src={applestore} className="mb-4" />
+          <Image src={googleplay} className="ml-2 mb-4" />
         </Col>
         <Col
           xs={12}
           lg={2}
-          className="d-flex align-items-center justify-content-center"
+          className="d-flex align-items-center justify-content-center mb-4"
         >
           <FontAwesomeIcon icon={faFacebookSquare} color="#7c7c7c" size="2x" />
           <FontAwesomeIcon
