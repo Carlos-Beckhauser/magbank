@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Container, Row, Col, Form, Image, Button } from "react-bootstrap";
+import { Row, Col, Form, Image, Button } from "react-bootstrap";
 import logo from "../assets/MAGbank.svg";
 import "./Login.scss";
 
@@ -13,22 +13,26 @@ const Login = () => (
           <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label className="text-light fs-5">
-                Número da conta
+                <strong>Número da conta</strong>
               </Form.Label>
               <Form.Control type="email" placeholder="" />
             </Form.Group>
 
             <Form.Group className="mb-5" controlId="formBasicPassword">
-              <Form.Label className="text-light fs-5">Senha</Form.Label>
+              <Form.Label className="text-light fs-5">
+                <strong>Senha</strong>
+              </Form.Label>
               <Form.Control type="password" placeholder="" />
             </Form.Group>
             <Form.Group
               className="mb-3"
               controlId="formBasicCheckbox"
             ></Form.Group>
-            <Button className="btnStyle" type="submit">
-              Criar Conta
-            </Button>
+            <Link to="/dashboard">
+              <Button className="btnStyle" type="submit">
+                Criar Conta
+              </Button>
+            </Link>
           </Form>
         </Col>
       </Row>

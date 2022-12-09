@@ -14,14 +14,14 @@ import applestore from "../assets/applestore.png";
 
 const Footer = () => (
   <footer className="footer">
-    <Container className="my-lg-4 mx-lg-3">
-      <Row className="text-center py-5">
-        <Col xs={12} lg={6} className="text-lg-left mb-4">
+    <Container className="my-lg-4 mx-lg-4">
+      <Row className="text-center py-5 ">
+        <Col xs={12} lg={6} className="text-lg-left mb-5 mb-md-0">
           <Image src={logo} />
         </Col>
-        <Col xs={12} lg={4} className="xs-my-5 mb-4">
-          <Image src={applestore} className="mb-4" />
-          <Image src={googleplay} className="ml-2 mb-4" />
+        <Col xs={12} lg={4} className="mb-5 mb-md-0">
+          <Image src={applestore} />
+          <Image src={googleplay} className="ml-2 " />
         </Col>
         <Col
           xs={12}
