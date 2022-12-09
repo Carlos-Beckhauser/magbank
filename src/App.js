@@ -5,6 +5,7 @@ import "./App.scss";
 import Footer from "./components/Footer";
 import AccountModal from "./components/AccountModal";
 import Home from "./views/Home";
+import Login from "./views/Login";
 
 const App = () => {
   const [showModal, setShowModal] = useState(false);
@@ -17,7 +18,7 @@ const App = () => {
           path="/"
           element={<Home handleClick={() => setShowModal(true)} />}
         />
-        <Route path="/login" element={<h2>Hello World !!!</h2>} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
       <AccountModal show={showModal} handleClose={() => setShowModal(false)} />

@@ -14,7 +14,7 @@ import applestore from "../assets/applestore.png";
 
 const Footer = () => (
   <footer className="footer">
-    <Container>
+    <Container className="my-lg-4 mx-lg-3">
       <Row className="text-center py-5">
         <Col xs={12} lg={6} className="text-lg-left mb-4">
           <Image src={logo} />
@@ -26,7 +26,7 @@ const Footer = () => (
         <Col
           xs={12}
           lg={2}
-          className="d-flex align-items-center justify-content-center mb-4"
+          className="d-flex align-items-center justify-content-center"
         >
           <FontAwesomeIcon icon={faFacebookSquare} color="#7c7c7c" size="2x" />
           <FontAwesomeIcon
