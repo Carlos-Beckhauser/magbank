@@ -9,13 +9,13 @@ const Login = () => (
     <div className="login__container">
       <Row>
         <Col className="text-center">
-          <Image src={logo} className=" logoStyle" />
+          <Image src={logo} className="mb-5 " />
           <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label className="text-light fs-5">
                 <strong>Número da conta</strong>
               </Form.Label>
-              <Form.Control type="email" placeholder="" />
+              <Form.Control type="number" placeholder="" />
             </Form.Group>
 
             <Form.Group className="mb-5" controlId="formBasicPassword">
