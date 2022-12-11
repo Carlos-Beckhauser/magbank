@@ -20,7 +20,7 @@ const App = () => {
           element={<Home handleClick={() => setShowModal(true)} />}
         />
         <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard/*" element={<Dashboard />} />
       </Routes>
       <Footer />
       <AccountModal show={showModal} handleClose={() => setShowModal(false)} />

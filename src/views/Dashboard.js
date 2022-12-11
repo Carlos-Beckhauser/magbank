@@ -1,60 +1,91 @@
-import React from "react";
+import React, { useState } from "react";
+import { Routes, Route, Link } from "react-router-dom";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faCircle } from "@fortawesome/free-solid-svg-icons";
+import AccountBalance from "../components/AccountBalance";
+import AccountPayments from "../components/AccountPayments";
+import AccountHistory from "../components/AccountHistory";
 import "./Dashboard.scss";
 
-const Dashboard = () => (
-  <Container className="dashboard py-5">
-    <Row>
-      <Col xs={12} lg={4}>
-        <Row className="align-items-center mb-5">
-          <Col xs={3}>
-            <span className="dashboard__user-avatar">
-              <FontAwesomeIcon icon={faCircle} size="5x" color="#f8f9fa" />
-              <FontAwesomeIcon
-                className="dashboard__user-icon"
-                icon={faUser}
-                size="3x"
-                color="#7c7d7d"
-              />
-            </span>
-          </Col>
-          <Col xs={9}>
-            <h3>Carlos Beckhauser</h3>
-            <p className="text-muted">ag: 1234 c/c:4321-5</p>
-          </Col>
-        </Row>
-        <Button className="d-block dashboard__button " variant="link" size="lg">
-          Minha Conta
-        </Button>
-        <Button className="d-block dashboard__button" variant="link" size="lg">
-          Pagamentos
-        </Button>
-        <Button className="d-block dashboard__button" variant="link" size="lg">
-          Extrato
-        </Button>
-      </Col>
-      <Col xs={12} lg={3} className="mt-lg-5 pt-lg-4">
-        <h3 className="my-5">Conta Corrente</h3>
-        <h6>
-          <small>
-            <strong>Saldo em conta corrente</strong>
-          </small>
-        </h6>
-        <h4 className="text-success mb-4">
-          <small>R$</small>3500<small>,00</small>
-        </h4>
-        <h6>
-          <strong>Cheque especial</strong>
-        </h6>
-        <p className="mb-0">Limite disponível</p>
-        <p className="mb-4">R$ 5.000,00</p>
-        <Button>Ver extrato</Button>
-      </Col>
-      <Col xs={12} lg={5}></Col>
-    </Row>
-  </Container>
-);
+const Dashboard = () => {
+  const [activeLink, setActiveLink] = useState(0);
+
+  const links = [
+    { text: "Minha conta", path: "/dashboard", exact: true },
+    { text: "Pagamentos", path: "payments" },
+    { text: "Extrato", path: "history" },
+  ];
+  const data = {
+    latestBalance: [
+      { date: "22/07", description: "SAQUE 24H 012345", value: "300,00" },
+      { date: "21/07", description: "SUPERMERCADO 02323626", value: "275,00" },
+      { date: "20/07", description: "NETFLIX 235236", value: "30,00" },
+      { date: "15/07", description: "FARMÁCIA 12125", value: "350,00" },
+    ],
+
+    futureBalance: [
+      { date: "22/07", description: "SAQUE 24H 012345", value: "300,00" },
+      { date: "21/07", description: "SUPERMERCADO 02323626", value: "275,00" },
+      { date: "20/07", description: "NETFLIX 235236", value: "30,00" },
+      { date: "15/07", description: "FARMÁCIA 12125", value: "350,00" },
+    ],
+
+    data: [
+      { date: "22/07", description: "SAQUE 24H 012345", value: "300,00" },
+      { date: "21/07", description: "SUPERMERCADO 02323626", value: "275,00" },
+      { date: "20/07", description: "NETFLIX 235236", value: "30,00" },
+      { date: "15/07", description: "FARMÁCIA 12125", value: "350,00" },
+    ],
+  };
+
+  return (
+    <Container className="dashboard py-5">
+      <Row>
+        <Col xs={12} lg={4}>
+          <Row className="d-flex align-items-center mb-5">
+            <Col xs={3} className="text-center">
+              <span className="dashboard__user-avatar">
+                <FontAwesomeIcon icon={faCircle} size="5x" color="#f8f9fa" />
+                <FontAwesomeIcon
+                  className="dashboard__user-icon"
+                  icon={faUser}
+                  size="3x"
+                  color="#7c7d7d"
+                />
+              </span>
+            </Col>
+            <Col xs={9}>
+              <h4>Carlos Beckhauser</h4>
+              <p className="text-muted">ag: 1234 c/c:4321-5</p>
+            </Col>
+          </Row>
+          {links.map(({ text, path }, key) => (
+            <Link className="dashboard__link d-block" to={path} key={key}>
+              <Button
+                className={`dashboard__button text-left' ${
+                  key === activeLink ? "dashboard__button--active" : ""
+                }`}
+                variant="link"
+                size="lg"
+                block
+                onClick={() => setActiveLink(key)}
+              >
+                {text}
+              </Button>
+            </Link>
+          ))}
+        </Col>
+        <Routes>
+          <Route path="/" element={<AccountBalance data={data} />} />
+
+          <Route path="/payments" element={<AccountPayments />} />
+
+          <Route path="/history" element={<AccountHistory data={data} />} />
+        </Routes>
+      </Row>
+    </Container>
+  );
+};
 
 export default Dashboard;

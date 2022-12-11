@@ -1,6 +1,11 @@
 @import '../variables';
 
 .dashboard {
+
+    @media screen and (min-width: 992px) {
+        min-height: calc(100vh - 15.4rem);
+    }
+
     &__user-avatar {
         position: relative;
     }
@@ -18,9 +23,32 @@
         text-decoration: none;
         width: 17rem;
         text-align: left;
-        &:hover {
+
+        &--active {
             background-color: $color-primary;
             color: #fff;
         }
+
+        &:hover
+         {
+            background-color: #510068;
+            color: #fff;
+            text-decoration: none;
+        }           
+    }
+
+    a.dashboard__link,
+    a.dashboard__link:active,
+    a.dashboard__link:hover {
+        text-decoration: none;
+    }
+
+    &__btn-ext:hover {
+        background-color: rgb(44, 44, 44);
+    }
+
+ .nav-link {
+        color: $color-primary;
     }
 }
+
