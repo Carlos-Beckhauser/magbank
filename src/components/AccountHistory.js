@@ -6,29 +6,31 @@ const AccountHistory = ({ data }) => {
 
   return (
     <Col xs={12} lg={8} className="mt-lg-5 pt-lg-5">
-      <h3 className="mt-4">Extrato de conta corrente</h3>
-
-      <Tabs className="mt-5 pt-lg-5" defaultActiveKey="latest">
-        <Table striped borderless>
-          <thead>
-            <tr>
-              <th>Data</th>
-              <th>Descrição</th>
-              <th>Valor(R$)</th>
-              <th>Saldo(R$)</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {history.map(({ date, description, value }) => (
+      <h3 className="my-4">Extrado de Conta Corrente</h3>
+      <Tabs>
+        <Tab eventKey="latest">
+          <Table striped borderless>
+            <thead>
               <tr>
-                <td>{date}</td>
-                <td>{description}</td>
-                <td className="fw-bold">{value}</td>
+                <th>Data</th>
+                <th>Descrição</th>
+                <th>Valor(R$)</th>
+                <th>Saldo(R$)</th>
               </tr>
-            ))}
-          </tbody>
-        </Table>
+            </thead>
+
+            <tbody>
+              {history.map(({ date, description, value, balance }) => (
+                <tr>
+                  <td>{date}</td>
+                  <td>{description}</td>
+                  <td className="text-danger">{value}</td>
+                  <td className="fw-bold">{balance}</td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </Tab>
       </Tabs>
     </Col>
   );

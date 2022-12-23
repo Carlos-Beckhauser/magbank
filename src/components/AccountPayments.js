@@ -1,5 +1,6 @@
 import React from "react";
 import { Col, Button, Tabs, Tab, Form } from "react-bootstrap";
+import "./AccountPayments.scss";
 
 const AccountPayments = () => (
   <Col xs={12} lg={8} className="mt-lg-5 pt-lg-5">
@@ -20,13 +21,14 @@ const AccountPayments = () => (
               <Form.Check
                 type="radio"
                 id="debit"
+                className="me-4 font_size"
                 label="Débito em Conta Corrente"
                 name="paymentType"
               />
               <Form.Check
                 type="radio"
                 id="credit"
-                className="ml-4"
+                className="ml-4 font_size"
                 label="Cartão de Crédito"
                 name="paymentType"
               />
