@@ -31,11 +31,61 @@ const Dashboard = () => {
       { date: "15/07", description: "FARMÁCIA 12125", value: "350,00" },
     ],
 
-    data: [
-      { date: "22/07", description: "SAQUE 24H 012345", value: "300,00" },
-      { date: "21/07", description: "SUPERMERCADO 02323626", value: "275,00" },
-      { date: "20/07", description: "NETFLIX 235236", value: "30,00" },
-      { date: "15/07", description: "FARMÁCIA 12125", value: "350,00" },
+    history: [
+      {
+        date: "17/07",
+        description: "SAQUE 24H 012345",
+        value: "- 200,00",
+        balance: "",
+      },
+      {
+        date: "17/07",
+        description: "SALDO DO DIA",
+        value: "",
+        balance: "2.780,00",
+      },
+      {
+        date: "19/07",
+        description: "ESTACIONAMENTO 123123",
+        value: "- 12,00",
+        balance: "",
+      },
+      {
+        date: "19/07",
+        description: "COMPRA INTERNET 123123",
+        value: "- 450,00",
+        balance: "",
+      },
+      {
+        date: "19/07",
+        description: "SALDO DO DIA",
+        value: "",
+        balance: "2.318,00",
+      },
+      {
+        date: "19/07",
+        description: "SALDO DO DIA",
+        value: "",
+        balance: "2.318,00",
+      },
+      {
+        date: "21/07",
+        description: "SUPERMERCADO 132213",
+        value: "- 275,90",
+        balance: "",
+      },
+      {
+        date: "21/07",
+        description: "ESTACIONAMENTO 123123",
+        value: "- 12,00",
+        balance: "",
+      },
+      {
+        date: "21/07",
+        description: "SHOPPING 123123",
+        value: "- 180,00",
+        balance: "",
+      },
     ],
   };
 
