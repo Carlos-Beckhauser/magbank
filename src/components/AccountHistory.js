@@ -14,8 +14,8 @@ const AccountHistory = ({ data }) => {
               <tr>
                 <th>Data</th>
                 <th>Descrição</th>
-                <th>Valor(R$)</th>
-                <th>Saldo(R$)</th>
+                <th className=".d-none .d-sm-block">Valor(R$)</th>
+                <th className=".d-none .d-sm-block">Saldo(R$)</th>
               </tr>
             </thead>
 
@@ -24,8 +24,8 @@ const AccountHistory = ({ data }) => {
                 <tr>
                   <td>{date}</td>
                   <td>{description}</td>
-                  <td className="text-danger">{value}</td>
-                  <td className="fw-bold">{balance}</td>
+                  <td className="text-danger ">{value}</td>
+                  <td className="fw-bold ">{balance}</td>
                 </tr>
               ))}
             </tbody>
