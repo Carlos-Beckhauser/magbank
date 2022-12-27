@@ -9,8 +9,9 @@ const IconText = ({
   color = "#000",
   className,
   textClassName,
+  onClick,
 }) => (
-  <Row className={`d-flex align-items-center ${className}`}>
+  <Row className={`d-flex align-items-center ${className}`} onClick={onClick}>
     <Col xs={size} className="d-flex justify-content-center">
       <FontAwesomeIcon icon={icon} size={`${size}x`} color={color} />
     </Col>

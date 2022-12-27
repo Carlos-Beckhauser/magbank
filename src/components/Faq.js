@@ -46,7 +46,7 @@ const Faq = () => {
               ))}
             </Row>
             <Row className="justify-content-center">
-              <p className="lead">{options[index].text}</p>
+              <p className="lead text-center mt-5">{options[index].text}</p>
             </Row>
           </Col>
 
@@ -55,9 +55,9 @@ const Faq = () => {
               <IconText
                 icon={icon}
                 size={3}
-                className="mb-3"
+                className="faq-clickable mb-3"
                 textClassName="lead"
-                color={key === index ? "#fff" : "#BBB"}
+                color={key === index ? "#FFF" : "#BBB"}
                 onClick={() => handleClick(key)}
                 key={key}
               >

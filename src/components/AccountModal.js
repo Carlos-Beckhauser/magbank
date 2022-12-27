@@ -7,7 +7,7 @@ const AccountModal = ({ text, auth, show, handleClose }) => {
   const [name, setName] = useState();
 
   const handleSubmit = () => {
-    auth.login(name, "12345", navigate("/dashboard/*"));
+    auth.login(name, "12345546546", navigate("/dashboard/*"));
     handleClose();
   };
 
