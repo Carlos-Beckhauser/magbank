@@ -8,7 +8,7 @@ import AccountPayments from "../components/AccountPayments";
 import AccountHistory from "../components/AccountHistory";
 import "./Dashboard.scss";
 
-const Dashboard = () => {
+const Dashboard = ({ name, account }) => {
   const [activeLink, setActiveLink] = useState(0);
 
   const links = [
@@ -106,8 +106,8 @@ const Dashboard = () => {
               </span>
             </Col>
             <Col xs={9}>
-              <h4>Carlos Beckhauser</h4>
-              <p className="text-muted">ag: 1234 c/c:4321-5</p>
+              <h4>{name}</h4>
+              <p className="text-muted">{account}</p>
             </Col>
           </Row>
           {links.map(({ text, path }, key) => (
@@ -127,11 +127,11 @@ const Dashboard = () => {
           ))}
         </Col>
         <Routes>
-          <Route path="/" element={<AccountBalance data={data} />} />
+          <Route path="/*" element={<AccountBalance data={data} />} />
 
-          <Route path="/payments" element={<AccountPayments />} />
+          <Route path="payments" element={<AccountPayments />} />
 
-          <Route path="/history" element={<AccountHistory data={data} />} />
+          <Route path="history" element={<AccountHistory data={data} />} />
         </Routes>
       </Row>
     </Container>
